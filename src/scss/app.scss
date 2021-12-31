@@ -1,0 +1,100 @@
+@import "./variables.scss";
+@font-face {
+  font-family: Circular-book;
+  src: url("../fonts/CircularStd-Book.otf");
+}
+@font-face {
+  font-family: Circular-med;
+  src: url("../fonts/CircularStd-Medium.otf");
+}
+@font-face {
+  font-family: Circular-bold;
+  src: url("../fonts/CircularStd-Bold.otf");
+}
+@font-face {
+  font-family: Magilio;
+  src: url("../fonts/MagilioRegular.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Circular-book";
+}
+body {
+  background: $mainBkn;
+  overflow-x: hidden;
+  .italic {
+    font-style: italic;
+  }
+  .bold {
+    font-weight: bold !important;
+    opacity: 1 !important;
+  }
+  .coloured {
+    color: $cta;
+  }
+  ul {
+    list-style-type: none;
+  }
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  p {
+    user-select: initial;
+  }
+  .flex {
+    display: flex;
+    align-items: center;
+  }
+  .relative {
+    position: relative;
+  }
+  .absolute {
+    position: absolute;
+  }
+  .max-width {
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 120rem;
+  }
+  .back-to-top {
+    position: fixed !important;
+    bottom: 2rem;
+    right: 2rem !important;
+    width: fit-content;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0);
+    transition: 0.4s all;
+
+    svg {
+      filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15));
+      transform: scale(1.4);
+    }
+  }
+  .visible-back-to-top {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
+  }
+  input[type="search"]::-ms-clear,
+  input[type="search"]::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  /* clears the 'X' from Chrome */
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+  }
+}
